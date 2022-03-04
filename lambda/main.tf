@@ -10,8 +10,4 @@ module "aws_lambda_function" {
   runtime       = var.runtime
 
   source_path = var.source_path
-
-  tags = {
-    Owner = var.owner
-  }
 }
