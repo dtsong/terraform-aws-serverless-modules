@@ -27,9 +27,9 @@ resource "aws_vpc" "this" {
 resource "aws_subnet" "database" {
   count = var.create_vpc && length(var.database_subnets) > 0 ? length(var.database_subnets) : 0
 
-  vpc_id                          = local.vpc_id
-  cidr_block                      = var.database_subnets[count.index]
-  availability_zone               = length(regexall("^[a-z]{2}-", element(var.azs, count.index))) > 0 ? element(var.azs, count.index) : null
+  vpc_id            = local.vpc_id
+  cidr_block        = var.database_subnets[count.index]
+  availability_zone = length(regexall("^[a-z]{2}-", element(var.azs, count.index))) > 0 ? element(var.azs, count.index) : null
 
   tags = merge(
     {
