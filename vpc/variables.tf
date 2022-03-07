@@ -1,8 +1,10 @@
-variable "create_vpc" {
-  description = "Controls if VPC should be created (it affects almost all resources)"
-  type        = bool
-  default     = true
+variable "region" {
+  description = "Relevant AWS region to deploy this VPC"
+  type        = string
+  default     = "us-west-2"
 }
+
+
 
 ################################################################################
 # VPC variables
@@ -17,6 +19,12 @@ variable "cidr" {
   description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overridden"
   type        = string
   default     = "0.0.0.0/0"
+}
+
+variable "private_subnets" {
+  description = "A list of private subnets"
+  type        = list(string)
+  default     = []
 }
 
 ################################################################################
