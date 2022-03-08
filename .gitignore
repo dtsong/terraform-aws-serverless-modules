@@ -1,6 +1,9 @@
 # Local .terraform directories
 **/.terraform/*
 
+# Only use these for local module testing
+**/terraform.tfvars
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
