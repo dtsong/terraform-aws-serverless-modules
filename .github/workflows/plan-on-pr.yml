@@ -26,13 +26,13 @@ jobs:
     env:
       TF_VAR_allowed_account_id: ${{ secrets.ALLOWED_ACCOUNT_ID }}
     runs-on: ubuntu-20.04
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     path:
-    #       - dev
-    #       - stage
-    #       - prod
+    strategy:
+      fail-fast: false
+      matrix:
+        path:
+          - lambda
+          - rds/db_instance
+          - vpc
 
     steps:
       - name: Check out code
@@ -52,14 +52,14 @@ jobs:
 
       - name: Initialize Terraform
         run: |
-          cd terraform/
-          terraform init -backend-config=backend.conf
+          cd ${{ matrix.path }}
+          terraform init
 
       - name: Plan Terraform
         id: plan
         continue-on-error: true
         run: |
-          cd terraform/
+          cd ${{ matrix.path }}
           terraform plan -no-color -out=tfplan \
           && terraform show -no-color tfplan
 
