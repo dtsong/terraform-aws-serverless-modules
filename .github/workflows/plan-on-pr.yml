@@ -14,7 +14,7 @@ jobs:
       matrix:
         path:
           - lambda
-          - rds/db_instance
+          - rds
           - vpc
     steps:
       - name: Check out code
@@ -40,7 +40,7 @@ jobs:
       matrix:
         path:
           - lambda
-          - rds/db_instance
+          - rds
           - vpc
 
     steps:
