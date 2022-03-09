@@ -16,7 +16,6 @@ No providers.
 |------|--------|---------|
 | <a name="module_db"></a> [db](#module\_db) | terraform-aws-modules/rds/aws | ~> 4.0 |
 | <a name="module_db_default"></a> [db\_default](#module\_db\_default) | terraform-aws-modules/rds/aws | ~> 4.0 |
-| <a name="module_security_group"></a> [security\_group](#module\_security\_group) | terraform-aws-modules/security-group/aws | ~> 4.0 |
 
 ## Resources
 
