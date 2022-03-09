@@ -13,6 +13,7 @@ jobs:
           - lambda
           - rds
           - vpc
+          - security_group
     steps:
     - uses: actions/checkout@v2
       with:
