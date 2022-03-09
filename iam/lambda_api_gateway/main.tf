@@ -4,51 +4,37 @@ provider "aws" {
 
 data "aws_iam_policy_document" "assume_role_policy" {
   statement {
-      sid = "1"
+    sid = "LambdaAssumeRolePolicy"
 
-      actions = [
-        "sts:AssumeRole"
-      ]
+    actions = ["sts:AssumeRole"]
 
-      resources = [
-        var.api_caller_role_arn
-      ]
+    principals {
+      type        = "Service"
+      identifiers = ["apigateway.amazonaws.com"]
+    }
   }
 }
 
 resource "aws_iam_role" "lambda_api_gateway" {
   name = "lambda-api-gateway-role"
 
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "apigateway.amazonaws.com"
-      }
-    }
-  ]
-}
-EOF
+  assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
 resource "aws_iam_role_policy" "invoke_lambda" {
-  name = "api-invoke-lambda-api-gateway"
+  name = "api-gateway-invoke-lambda-function"
   role = aws_iam_role.lambda_api_gateway.id
 
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
+  policy = jsonencode(
     {
-      "Effect": "Allow",
-      "Action": "lambda:InvokeFunction",
-      "Resource": "*"
+      Version = "2012-10-17",
+      Statement = [
+        {
+          "Effect" : "Allow",
+          "Action" : "lambda:InvokeFunction",
+          "Resource" : var.lambda_function_arn
+        }
+      ]
     }
-  ]
-}
-EOF
+  )
 }
