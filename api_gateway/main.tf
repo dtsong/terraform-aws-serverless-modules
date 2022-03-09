@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 data "aws_ssm_parameter" "api_caller_role" {
-  name = "${var.api_caller_ps_name}"
+  name = var.api_caller_ps_name
 }
 
 data "aws_iam_policy_document" "private_gw_policy" {
