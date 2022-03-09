@@ -4,7 +4,7 @@ provider "aws" {
 
 
 resource "aws_api_gateway_rest_api" "api_gateway" {
-  name   = var.function_name
+  name = var.function_name
 }
 
 resource "aws_api_gateway_stage" "gateway_stage" {
@@ -23,8 +23,8 @@ resource "aws_api_gateway_stage" "gateway_stage" {
 }
 
 resource "aws_api_gateway_deployment" "gateway_deploy" {
-  rest_api_id       = aws_api_gateway_rest_api.api_gateway.id
-  stage_name        = ""
+  rest_api_id = aws_api_gateway_rest_api.api_gateway.id
+  stage_name  = ""
 
   lifecycle {
     create_before_destroy = true

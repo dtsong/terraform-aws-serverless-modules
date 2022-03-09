@@ -4,7 +4,7 @@ variable "function_name" {}
 
 variable "lambda_invoke_arn" {
   description = "Lambda ARN to be invoked by this API Gateway"
-  type = string
+  type        = string
 }
 
 variable "certificate_arn" {
