@@ -19,7 +19,7 @@ variable "security_group_id" {
 
 variable "vpc_database_subnet_group" {
   description = "Group of VPC subnets to be allocated for the RDS DB"
-  type = string
+  type        = string
 }
 
 ##########################
@@ -29,6 +29,12 @@ variable "vpc_database_subnet_group" {
 variable "identifier" {
   description = "The name of the RDS instance"
   type        = string
+}
+
+variable "create_random_password" {
+  description = "Whether to create random password for RDS primary cluster"
+  type        = bool
+  default     = true
 }
 
 variable "multi_az" {
