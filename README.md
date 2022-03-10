@@ -2,9 +2,9 @@
 
 This repository contains various modules that can be utilized for doing serverless infrastructure deployment on AWS utilizing Terraform.
 
-NOTE: Modules in this repository are mainly for my own Infrastructure as Code skill development and not quite battle-tested for real, production scenarios (at least not yet...). Use at your own risk.
+**NOTE: Modules in this repository are mainly for my own Infrastructure as Code skill development and not quite battle-tested for real, production scenarios (at least not yet...). Use at your own risk.**
 
-For more information on how to utilize each module, check the relevant module README.md files here:
+For more information on how to utilize each module, check the relevant module `README.md` files here:
 
 ### Table of Modules
   * [lambda](https://github.com/dtsong/terraform-aws-serverless-modules/tree/master/lambda)
