@@ -33,8 +33,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_api_gateway_security_policy"></a> [api\_gateway\_security\_policy](#input\_api\_gateway\_security\_policy) | n/a | `string` | `"TLS_1_2"` | no |
 | <a name="input_cache_cluster_size"></a> [cache\_cluster\_size](#input\_cache\_cluster\_size) | The size of the cache cluster for the stage, if enabled. Allowed values include 0.5, 1.6, 6.1, 13.5, 28.4, 58.2, 118 and 237 | `number` | `0.5` | no |
-| <a name="input_cache_enabled"></a> [cache\_enabled](#input\_cache\_enabled) | Set true/false to enable API Gateway caching | `boolean` | `true` | no |
-| <a name="input_cache_encrypted"></a> [cache\_encrypted](#input\_cache\_encrypted) | Set true/false to enable API Gateway cache encryption | `boolean` | `true` | no |
+| <a name="input_cache_enabled"></a> [cache\_enabled](#input\_cache\_enabled) | Set true/false to enable API Gateway caching | `bool` | `true` | no |
+| <a name="input_cache_encrypted"></a> [cache\_encrypted](#input\_cache\_encrypted) | Set true/false to enable API Gateway cache encryption | `bool` | `true` | no |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The Lambda function name to be attached to this API Gateway | `string` | n/a | yes |
 | <a name="input_lambda_invoke_arn"></a> [lambda\_invoke\_arn](#input\_lambda\_invoke\_arn) | Lambda ARN to be invoked by this API Gateway | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region to deploy this API Gateway | `string` | n/a | yes |
