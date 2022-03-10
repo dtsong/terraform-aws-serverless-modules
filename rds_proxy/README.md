@@ -34,7 +34,7 @@ No modules.
 | <a name="input_rds_proxy_iam_role_arn"></a> [rds\_proxy\_iam\_role\_arn](#input\_rds\_proxy\_iam\_role\_arn) | IAM Role ARN for the RDS Proxy | `string` | n/a | yes |
 | <a name="input_rds_proxy_security_group_id"></a> [rds\_proxy\_security\_group\_id](#input\_rds\_proxy\_security\_group\_id) | Security Group ID for the RDS Proxy | `string` | n/a | yes |
 | <a name="input_rds_secret_arn"></a> [rds\_secret\_arn](#input\_rds\_secret\_arn) | Secrets Manager ARN for RDS Proxy access to DB | `string` | n/a | yes |
-| <a name="input_vpc_database_subnets"></a> [vpc\_database\_subnets](#input\_vpc\_database\_subnets) | VPC Database Subnets for the RDS Proxy | `map(string)` | n/a | yes |
+| <a name="input_vpc_database_subnets"></a> [vpc\_database\_subnets](#input\_vpc\_database\_subnets) | VPC Database Subnets for the RDS Proxy | `list(string)` | n/a | yes |
 
 ## Outputs
 
