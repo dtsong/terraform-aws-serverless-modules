@@ -37,3 +37,18 @@ output "database_subnet_group_name" {
   description = "Name of database subnet group"
   value       = module.vpc.database_subnet_group_name
 }
+
+output "lambda_security_group_id" {
+  description = "Lambda Security Group ID"
+  value       = aws_security_group.lambda_sg.id
+}
+
+output "rds_proxy_security_group_id" {
+  description = "RDS Proxy Security Group ID"
+  value       = aws_security_group.rds_proxy_sg.id
+}
+
+output "rds_security_group_id" {
+  description = "RDS Security Group ID"
+  value       = aws_security_group.rds_sg.id
+}

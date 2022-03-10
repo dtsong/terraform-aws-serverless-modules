@@ -4,8 +4,6 @@ variable "region" {
   default     = "us-west-2"
 }
 
-
-
 ################################################################################
 # VPC variables
 ################################################################################
@@ -23,6 +21,12 @@ variable "cidr" {
 
 variable "private_subnets" {
   description = "A list of private subnets"
+  type        = list(string)
+  default     = []
+}
+
+variable "intra_subnets" {
+  description = "A list of intra subnets"
   type        = list(string)
   default     = []
 }

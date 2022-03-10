@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a MODULE_FOLDERS=( "api_gateway" "iam/lambda" "iam/lambda_api_gateway" "lambda" "rds" "secrets_manager" "security_group" "vpc")
+declare -a MODULE_FOLDERS=( "api_gateway" "iam/lambda" "iam/lambda_api_gateway" "iam/rds_proxy" "lambda" "rds" "secrets_manager" "security_group" "rds_proxy" "vpc")
 
 if terraform-docs -h 2&> /dev/null; then
   echo "terraform-docs is installed - proceeding..."

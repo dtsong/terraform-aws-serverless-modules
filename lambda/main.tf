@@ -6,4 +6,8 @@ module "aws_lambda_function" {
   runtime       = var.runtime
 
   source_path = var.source_path
+
+  # Networking
+  vpc_subnet_ids         = var.intra_subnets
+  vpc_security_group_ids = [var.lambda_security_group_id]
 }
