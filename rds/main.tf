@@ -21,9 +21,9 @@ module "db" {
   # "Error creating DB Instance: InvalidParameterValue: MasterUsername
   # user cannot be used as it is a reserved word used by the engine"
   db_name  = var.db_name
-  username = var.username
-  password = var.password
-  port     = var.port
+  username = var.db_username
+  password = var.db_password
+  port     = var.db_port
 
   create_random_password = var.create_random_password
 
@@ -83,9 +83,9 @@ module "db_default" {
   # "Error creating DB Instance: InvalidParameterValue: MasterUsername
   # user cannot be used as it is a reserved word used by the engine"
   db_name  = var.db_name
-  username = var.username
-  password = var.password
-  port     = var.port
+  username = var.db_username
+  password = var.db_password
+  port     = var.db_port
 
   db_subnet_group_name   = var.vpc_database_subnet_group
   vpc_security_group_ids = [var.security_group_id]

@@ -21,13 +21,13 @@ variable "stage_name" {
 
 variable "cache_enabled" {
   description = "Set true/false to enable API Gateway caching"
-  type        = boolean
+  type        = bool
   default     = true
 }
 
 variable "cache_encrypted" {
   description = "Set true/false to enable API Gateway cache encryption"
-  type        = boolean
+  type        = bool
   default     = true
 }
 
