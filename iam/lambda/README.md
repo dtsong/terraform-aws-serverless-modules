@@ -31,7 +31,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | Name of the Lambda IAM role | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Name of the Lambda | `string` | n/a | yes |
 | <a name="input_rds_instance_arn"></a> [rds\_instance\_arn](#input\_rds\_instance\_arn) | RDS instance ARN to be accessed by the Lambda | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The relevant region for this IAM role | `string` | n/a | yes |
 | <a name="input_secrets_manager_secret_arn"></a> [secrets\_manager\_secret\_arn](#input\_secrets\_manager\_secret\_arn) | DB Secret ARN to be accessed by the Lambda | `string` | n/a | yes |
