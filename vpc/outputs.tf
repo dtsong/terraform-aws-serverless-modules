@@ -15,7 +15,6 @@ output "vpc_cidr_block" {
 
 output "intra_subnets" {
   description = "List of IDs of intra subnets"
-  type        = list(string)
   value       = module.vpc.intra_subnets
 }
 
