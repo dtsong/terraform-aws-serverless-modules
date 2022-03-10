@@ -1,38 +1,46 @@
-variable "region" {}
-variable "account_id" {}
-variable "function_name" {}
+variable "region" {
+  description = "The AWS region to deploy this API Gateway"
+  type        = string
+}
+
+variable "function_name" {
+  description = "The Lambda function name to be attached to this API Gateway"
+  type        = string
+}
 
 variable "lambda_invoke_arn" {
   description = "Lambda ARN to be invoked by this API Gateway"
   type        = string
 }
 
-variable "certificate_arn" {
-  default = "NOTSET"
-}
-
 variable "stage_name" {
-  default = "api"
+  description = "The stage for the API Gateway"
+  type        = string
+  default     = "api"
 }
 
 variable "cache_enabled" {
-  default = "false"
+  description = "Set true/false to enable API Gateway caching"
+  type        = boolean
+  default     = true
 }
 
 variable "cache_encrypted" {
-  default = "false"
-}
-
-variable "cache_ttl_in_seconds" {
-  default = 120
+  description = "Set true/false to enable API Gateway cache encryption"
+  type        = boolean
+  default     = true
 }
 
 variable "cache_cluster_size" {
-  default = "0.5"
+  description = "The size of the cache cluster for the stage, if enabled. Allowed values include 0.5, 1.6, 6.1, 13.5, 28.4, 58.2, 118 and 237"
+  type        = number
+  default     = 0.5
 }
 
-variable "api_gateway_endpoint_configuration_types" {
-  default = ["REGIONAL"]
+variable "tags" {
+  description = "A map of tags to assign to resources."
+  type        = map(string)
+  default     = {}
 }
 
 variable "api_gateway_security_policy" {
