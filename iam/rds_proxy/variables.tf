@@ -17,6 +17,6 @@ variable "rds_secret_arn" {
 variable "rds_key_id" {
   description = "KMS Key ID to allow RDS Proxy to use for decrypting"
   type        = string
-  default     = "aws/secretsmanager"
+  default     = "alias/aws/secretsmanager"
   sensitive   = true
 }
