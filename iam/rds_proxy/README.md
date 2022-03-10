@@ -32,7 +32,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name of the RDS Proxy for this IAM role | `string` | n/a | yes |
-| <a name="input_rds_key_id"></a> [rds\_key\_id](#input\_rds\_key\_id) | KMS Key ID to allow RDS Proxy to use for decrypting | `string` | `"aws/secretsmanager"` | no |
+| <a name="input_rds_key_id"></a> [rds\_key\_id](#input\_rds\_key\_id) | KMS Key ID to allow RDS Proxy to use for decrypting | `string` | `"alias/aws/secretsmanager"` | no |
 | <a name="input_rds_secret_arn"></a> [rds\_secret\_arn](#input\_rds\_secret\_arn) | ARN of RDS Secret in Secrets Manager | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region where this IAM role for RDS Proxy resides | `string` | n/a | yes |
 
