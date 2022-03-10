@@ -18,6 +18,11 @@ output "database_subnets" {
   value       = module.vpc.database_subnets
 }
 
+output "intra_subnets" {
+  description = "List of IDs of intra subnets"
+  value = module.vpc.intra_subnets
+}
+
 output "database_subnet_arns" {
   description = "List of ARNs of database subnets"
   value       = module.vpc.database_subnet_arns
