@@ -16,13 +16,13 @@ data "aws_iam_policy_document" "assume_role_policy" {
 }
 
 resource "aws_iam_role" "lambda_api_gateway" {
-  name = "lambda-api-gateway-role"
+  name = "${var.name}role"
 
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
 resource "aws_iam_role_policy" "invoke_lambda" {
-  name = "api-gateway-invoke-lambda-function"
+  name = "${var.name}-policy"
   role = aws_iam_role.lambda_api_gateway.id
 
   policy = jsonencode(

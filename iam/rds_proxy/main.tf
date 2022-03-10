@@ -49,7 +49,7 @@ data "aws_iam_policy_document" "rds_proxy_policy_document" {
 }
 
 resource "aws_iam_policy" "rds_proxy_iam_policy" {
-  name   = "rds-proxy-policy"
+  name   = "${var.name}-policy"
   policy = data.aws_iam_policy_document.rds_proxy_policy_document.json
 }
 
@@ -59,6 +59,6 @@ resource "aws_iam_role_policy_attachment" "rds_proxy_iam_attach" {
 }
 
 resource "aws_iam_role" "rds_proxy_iam_role" {
-  name               = "rds-proxy-role"
+  name               = "${var.name}-role"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
