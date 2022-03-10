@@ -15,6 +15,19 @@ data "aws_iam_policy_document" "lambda_assume_role_policy" {
   }
 }
 
+data "aws_iam_policy_document" "lambda_create_eni_for_db" {
+  statement {
+    sid = "LambdaCreateEniOnEC2"
+
+    actions = ["ec2:CreateNetworkInterface"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
+  }
+}
+
 data "aws_iam_policy_document" "lambda_invoke_rds_policy" {
   statement {
     sid = "LambdaInvokeRdsPolicy"
@@ -54,7 +67,8 @@ data "aws_iam_policy_document" "lambda_secrets_manager_policy" {
 data "aws_iam_policy_document" "lambda_necessary_db_access" {
   source_policy_documents = [
     data.aws_iam_policy_document.lambda_secrets_manager_policy.json,
-    data.aws_iam_policy_document.lambda_invoke_rds_policy.json
+    data.aws_iam_policy_document.lambda_invoke_rds_policy.json,
+    data.aws_iam_policy_document.lambda_create_eni_for_db.json
   ]
 }
 
