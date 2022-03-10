@@ -27,7 +27,6 @@ variable "rds_proxy_security_group_id" {
 variable "vpc_database_subnets" {
   description = "VPC Database Subnets for the RDS Proxy"
   type        = map(string)
-  default = []
 }
 
 variable "rds_secret_arn" {
