@@ -17,11 +17,6 @@ variable "security_group_id" {
   type        = string
 }
 
-variable "vpc_database_subnet_group" {
-  description = "Group of VPC subnets to be allocated for the RDS DB"
-  type        = string
-}
-
 ##########################
 # RDS instance variables #
 ##########################

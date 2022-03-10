@@ -28,7 +28,6 @@ module "db" {
   create_random_password = var.create_random_password
 
   multi_az               = var.multi_az
-  db_subnet_group_name   = var.vpc_database_subnet_group
   vpc_security_group_ids = [var.security_group_id]
 
   maintenance_window              = var.maintenance_window
