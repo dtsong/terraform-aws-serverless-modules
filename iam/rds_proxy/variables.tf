@@ -1,6 +1,11 @@
 variable "region" {
   description = "Region where this IAM role for RDS Proxy resides"
-  type = string
+  type        = string
+}
+
+variable "name" {
+  description = "Name of the RDS Proxy for this IAM role"
+  type        = string
 }
 
 variable "rds_secret_arn" {
@@ -12,5 +17,6 @@ variable "rds_secret_arn" {
 variable "rds_key_id" {
   description = "KMS Key ID to allow RDS Proxy to use for decrypting"
   type        = string
+  default     = "aws/secretsmanager"
   sensitive   = true
 }

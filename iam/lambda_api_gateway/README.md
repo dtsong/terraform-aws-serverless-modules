@@ -29,6 +29,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_lambda_function_arn"></a> [lambda\_function\_arn](#input\_lambda\_function\_arn) | ARN of Lambda Function that is to be invoked by the API Gateway | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Name of the API Gateway for this IAM role | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The relevant region for this IAM role | `string` | n/a | yes |
 
 ## Outputs

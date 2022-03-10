@@ -4,7 +4,7 @@ variable "region" {
 }
 
 variable "name" {
-  description = "Name of the Lambda IAM role"
+  description = "Name of the Lambda"
   type        = string
 }
 

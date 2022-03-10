@@ -3,6 +3,11 @@ variable "region" {
   type        = string
 }
 
+variable "name" {
+  description = "Name of the API Gateway for this IAM role"
+  type        = string
+}
+
 variable "lambda_function_arn" {
   description = "ARN of Lambda Function that is to be invoked by the API Gateway"
   type        = string
