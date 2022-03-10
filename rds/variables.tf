@@ -208,21 +208,21 @@ variable "db_name" {
   default     = null
 }
 
-variable "username" {
+variable "db_username" {
   description = "Username for the master DB user"
   type        = string
   default     = null
   sensitive   = true
 }
 
-variable "password" {
+variable "db_password" {
   description = "Password for the master DB user. Note that it will be stored in the state file, lock it down accordingly"
   type        = string
   default     = null
   sensitive   = true
 }
 
-variable "port" {
+variable "db_port" {
   description = "The port on which the DB accepts connections"
   type        = string
   default     = null
