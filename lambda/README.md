@@ -26,7 +26,7 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | A unique name for the Lambda Function | `string` | `""` | no |
 | <a name="input_handler"></a> [handler](#input\_handler) | Lambda Function entrypoint in your code | `string` | `""` | no |
-| <a name="input_intra_subnets"></a> [intra\_subnets](#input\_intra\_subnets) | VPC Intra-Subnets for the Lambda configuration | `map(string)` | n/a | yes |
+| <a name="input_intra_subnets"></a> [intra\_subnets](#input\_intra\_subnets) | VPC Intra-Subnets for the Lambda configuration | `list(string)` | n/a | yes |
 | <a name="input_lambda_security_group_id"></a> [lambda\_security\_group\_id](#input\_lambda\_security\_group\_id) | Security Group ID specifically for this Lambda | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"us-west-2"` | no |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | Lambda Function runtime | `string` | `""` | no |

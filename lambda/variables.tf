@@ -28,7 +28,7 @@ variable "source_path" {
 
 variable "intra_subnets" {
   description = "VPC Intra-Subnets for the Lambda configuration"
-  type        = map(string)
+  type        = list(string)
 }
 
 variable "lambda_security_group_id" {
